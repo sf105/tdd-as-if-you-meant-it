@@ -31,6 +31,8 @@ public class TicTacToeTests {
     @Test public void
     oWinsWithTheTopRow() {
         assertEquals("O", ticTacToeScoreOf(7, 1, 4, 2, 5, 3));
+        assertEquals("O", ticTacToeScoreOf(7, 4, 1, 5, 2, 6));
+        assertEquals("O", ticTacToeScoreOf(1, 7, 2, 8, 5, 9));
     }
 
     private String ticTacToeScoreOf(int... moves) {
@@ -38,7 +40,9 @@ public class TicTacToeTests {
         if (is_an_X_row(moves)) {
             return "X";
         }
-        if (moves[1] == 1 && moves[3] == 2 && moves[5] == 3) {
+        if ((moves[1] == 1 && moves[3] == 2 && moves[5] == 3)
+            || (moves[1] == 4 && moves[3] == 5 && moves[5] == 6)
+            || (moves[1] == 7 && moves[3] == 8 && moves[5] == 9)){
             return "O";
         }
         return "Undefined";
