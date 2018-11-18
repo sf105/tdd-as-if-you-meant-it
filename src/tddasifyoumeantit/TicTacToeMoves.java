@@ -10,8 +10,8 @@ class TicTacToeMoves {
     private static final List<List<Integer>> WINNING_PLAYS = asList(
             asList(1, 2, 3), asList(4, 5, 6), asList(7, 8, 9), asList(1, 4, 7));
 
-    private static final int O_OFFSET = 1;
-    private static final int X_OFFSET = 0;
+    public static final Player O_PLAYER = new Player(1);
+    public static final Player X_PLAYER = new Player(0);
 
     private final List<Integer> moves;
 
@@ -21,10 +21,10 @@ class TicTacToeMoves {
 
     public String score() {
         if (hasTooFewMoves()) {  return "Unfinished"; }
-        if (playerWins(X_OFFSET)) {
+        if (playerWins(X_PLAYER)) {
             return "X";
         }
-        if (playerWins(O_OFFSET)){
+        if (playerWins(O_PLAYER)){
             return "O";
         }
         return "Draw";
@@ -34,8 +34,8 @@ class TicTacToeMoves {
         return moves.size() < 5;
     }
 
-    private boolean playerWins(int playerOffset) {
-        return has_won(playerMoves(playerOffset));
+    private boolean playerWins(Player player) {
+        return has_won(playerMoves(player.getPlayerOffset()));
     }
 
     private List<Integer> playerMoves(int playerOffset) {
@@ -48,5 +48,17 @@ class TicTacToeMoves {
 
     private boolean has_won(List<Integer> moves) {
         return WINNING_PLAYS.stream().anyMatch(moves::containsAll);
+    }
+
+    private static class Player {
+        private final int playerOffset;
+
+        private Player(int playerOffset) {
+            this.playerOffset = playerOffset;
+        }
+
+        public int getPlayerOffset() {
+            return playerOffset;
+        }
     }
 }
