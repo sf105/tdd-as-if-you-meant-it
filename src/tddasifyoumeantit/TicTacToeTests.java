@@ -16,5 +16,9 @@ public class TicTacToeTests {
         assertEquals("Unfinished", new int[]{1}.length == 1 ? "Unfinished" : "Undefined");
     }
 
+    @Test public void
+    twoMovesIsUnfinished() {
+        assertEquals("Unfinished", new int[]{1,2}.length);
+    }
 
 }
