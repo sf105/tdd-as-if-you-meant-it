@@ -22,7 +22,6 @@ public class TicTacToeTests {
         assertEquals("Unfinished", ticTacToeScoreOf(1, 2, 3));
         assertEquals("Unfinished", ticTacToeScoreOf(1, 2, 3, 4));
     }
-
     @Test public void
     xWinsWithTheTopRow() {
         assertEquals("X", ticTacToeScoreOf(1, 4, 2, 5, 3));
@@ -30,6 +29,11 @@ public class TicTacToeTests {
     @Test public void
     oWinsWithTheTopRow() {
         assertEquals("O", ticTacToeScoreOf(7, 1, 4, 2, 5, 3));
+    }
+
+    @Test public void
+    xWinsWithTheMiddleRow() {
+        assertEquals("X", ticTacToeScoreOf(4, 1, 5, 2, 6));
     }
 
     private String ticTacToeScoreOf(int... moves) {
