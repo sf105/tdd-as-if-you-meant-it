@@ -70,9 +70,10 @@ public class TicTacToeTests {
         }
 
         private boolean is_an_O_row() {
-            return (moves[1] == 1 && moves[3] == 2 && moves[5] == 3)
-                || (moves[1] == 4 && moves[3] == 5 && moves[5] == 6)
-                || (moves[1] == 7 && moves[3] == 8 && moves[5] == 9);
+            List<Integer> yMoves = Arrays.asList(moves1.get(1), moves1.get(3), moves1.get(5));
+            return yMoves.containsAll(Arrays.asList(1, 2, 3))
+                    || yMoves.containsAll(Arrays.asList(4, 5, 6))
+                    || yMoves.containsAll(Arrays.asList(7, 8, 9));
         }
     }
 }
