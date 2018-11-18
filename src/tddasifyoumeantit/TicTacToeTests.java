@@ -20,40 +20,29 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class TicTacToeTests {
     @Test public void
     aGameWithFewerThan5MovesCannotBeFinished() {
-        assertEquals("Unfinished", ticTacToeScoreOf(new Moves()));
-        assertEquals("Unfinished", ticTacToeScoreOf(new Moves(1)));
-        assertEquals("Unfinished", ticTacToeScoreOf(new Moves(1, 2)));
-        assertEquals("Unfinished", ticTacToeScoreOf(new Moves(1, 2, 3)));
-        assertEquals("Unfinished", ticTacToeScoreOf(new Moves(1, 2, 3, 4)));
+        assertEquals("Unfinished", new Moves().score());
+        assertEquals("Unfinished", new Moves(1).score());
+        assertEquals("Unfinished", new Moves(1, 2).score());
+        assertEquals("Unfinished", new Moves(1, 2, 3).score());
+        assertEquals("Unfinished", new Moves(1, 2, 3, 4).score());
     }
     @Test public void
     xWinsWithAnInitialRow() {
-        assertEquals("X", ticTacToeScoreOf(new Moves(1, 4, 2, 5, 3)));
-        assertEquals("X", ticTacToeScoreOf(new Moves(4, 1, 5, 2, 6)));
-        assertEquals("X", ticTacToeScoreOf(new Moves(7, 4, 8, 5, 9)));
+        assertEquals("X", new Moves(1, 4, 2, 5, 3).score());
+        assertEquals("X", new Moves(4, 1, 5, 2, 6).score());
+        assertEquals("X", new Moves(7, 4, 8, 5, 9).score());
     }
 
     @Test public void
     oWinsWithTheTopRow() {
-        assertEquals("O", ticTacToeScoreOf(new Moves(7, 1, 4, 2, 5, 3)));
-        assertEquals("O", ticTacToeScoreOf(new Moves(7, 4, 1, 5, 2, 6)));
-        assertEquals("O", ticTacToeScoreOf(new Moves(1, 7, 2, 8, 5, 9)));
+        assertEquals("O", new Moves(7, 1, 4, 2, 5, 3).score());
+        assertEquals("O", new Moves(7, 4, 1, 5, 2, 6).score());
+        assertEquals("O", new Moves(1, 7, 2, 8, 5, 9).score());
     }
 
     @Test public void
     xWinsWithALaterRow() {
-        assertEquals("X", ticTacToeScoreOf(new Moves(7, 8, 1, 4, 2, 5, 3)));
-    }
-
-    private String ticTacToeScoreOf(Moves moves) {
-        if (moves.hasTooFewMoves()) {  return "Unfinished"; }
-        if (moves.is_an_X_row()) {
-            return "X";
-        }
-        if (moves.is_an_O_row()){
-            return "O";
-        }
-        return "Undefined";
+        assertEquals("X", new Moves(7, 8, 1, 4, 2, 5, 3).score());
     }
 
     private static class Moves {
@@ -99,6 +88,17 @@ public class TicTacToeTests {
             return moves.containsAll(UPPER_ROW)
                     || moves.containsAll(MIDDLE_ROW)
                     || moves.containsAll(LOWER_ROW);
+        }
+
+        public String score() {
+            if (hasTooFewMoves()) {  return "Unfinished"; }
+            if (is_an_X_row()) {
+                return "X";
+            }
+            if (is_an_O_row()){
+                return "O";
+            }
+            return "Undefined";
         }
     }
 }
