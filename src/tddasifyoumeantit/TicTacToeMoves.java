@@ -27,8 +27,6 @@ class TicTacToeMoves {
             return result;
         }
     }
-    public static final Player O_PLAYER = Player.O;
-    public static final Player X_PLAYER = Player.X;
 
     private final List<Integer> moves;
 
@@ -38,10 +36,10 @@ class TicTacToeMoves {
 
     public String score() {
         if (hasTooFewMoves()) {  return "Unfinished"; }
-        if (playerWins(X_PLAYER)) {
+        if (playerWins(Player.X)) {
             return "X";
         }
-        if (playerWins(O_PLAYER)){
+        if (playerWins(Player.O)){
             return "O";
         }
         return "Draw";
