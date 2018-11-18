@@ -55,7 +55,17 @@ Existing code _that you know works_
 
 ---
 
+# The exercise
+
+### Write code that, given a series of Tic-Tac-Toe<sup>[1]</sup> moves, describes the state of the game.
+
+1] Also known as "Noughts-and-crosses"
+
+
+---
+
 # Rules of the exercise
+
 - Write one new test: The _smallest you can think of_ that seems to
   point in the direction of a solution.
 - Watch it fail
