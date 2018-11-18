@@ -18,11 +18,11 @@ public class TicTacToeTests {
 
     @Test public void
     twoMovesIsUnfinished() {
-        assertEquals("Unfinished", ticTacToeScoreOf());
+        assertEquals("Unfinished", ticTacToeScoreOf(new int[]{1, 2}));
     }
 
-    private String ticTacToeScoreOf() {
-        return new int[]{1,2}.length == 2 ? "Unfinished" : "Undefined";
+    private String ticTacToeScoreOf(int[] moves) {
+        return moves.length == 2 ? "Unfinished" : "Undefined";
     }
 
 }
