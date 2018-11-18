@@ -16,15 +16,26 @@ class TicTacToeMoves {
         this.moves = Arrays.asList(moves);
     }
 
+    public String score() {
+        if (hasTooFewMoves()) {  return "Unfinished"; }
+        if (X_wins()) {
+            return "X";
+        }
+        if (O_wins()){
+            return "O";
+        }
+        return "Undefined";
+    }
+
     private boolean hasTooFewMoves() {
         return moves.size() < 5;
     }
 
-    private boolean is_an_X_row() {
+    private boolean X_wins() {
         return has_a_row(xMoves());
     }
 
-    private boolean is_an_O_row() {
+    private boolean O_wins() {
         return has_a_row(oMoves());
     }
 
@@ -48,16 +59,5 @@ class TicTacToeMoves {
         return moves.containsAll(UPPER_ROW)
                 || moves.containsAll(MIDDLE_ROW)
                 || moves.containsAll(LOWER_ROW);
-    }
-
-    public String score() {
-        if (hasTooFewMoves()) {  return "Unfinished"; }
-        if (is_an_X_row()) {
-            return "X";
-        }
-        if (is_an_O_row()){
-            return "O";
-        }
-        return "Undefined";
     }
 }
