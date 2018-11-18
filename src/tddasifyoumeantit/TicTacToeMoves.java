@@ -1,15 +1,15 @@
 package tddasifyoumeantit;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
+
+import static java.util.Arrays.asList;
 
 @SuppressWarnings("WeakerAccess")
 class TicTacToeMoves {
-    private static final List<Integer> UPPER_ROW = Arrays.asList(1, 2, 3);
-    private static final List<Integer> MIDDLE_ROW = Arrays.asList(4, 5, 6);
-    private static final List<Integer> LOWER_ROW = Arrays.asList(7, 8, 9);
-    private static final List<Integer> LEFT_COLUMN = Arrays.asList(1, 4, 7);
+    private static final List<List<Integer>> WINNING_PLAYS = asList(
+            asList(1, 2, 3), asList(4, 5, 6), asList(7, 8, 9), asList(1, 4, 7));
+
     private static final int O_OFFSET = 1;
     private static final int X_OFFSET = 0;
 
@@ -17,7 +17,7 @@ class TicTacToeMoves {
     private final List<Integer> moves;
 
     TicTacToeMoves(Integer... moves) {
-        this.moves = Arrays.asList(moves);
+        this.moves = asList(moves);
     }
 
     public String score() {
@@ -48,9 +48,6 @@ class TicTacToeMoves {
     }
 
     private boolean has_won(List<Integer> moves) {
-        return moves.containsAll(UPPER_ROW)
-                || moves.containsAll(MIDDLE_ROW)
-                || moves.containsAll(LOWER_ROW)
-                || moves.containsAll(LEFT_COLUMN);
+        return WINNING_PLAYS.stream().anyMatch(moves::containsAll);
     }
 }
