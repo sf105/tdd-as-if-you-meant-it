@@ -1,6 +1,9 @@
 # Test-Driven Development as if you meant it
 An exercise for pushing Test-Driven Development to its limits. 
+
 Originally by Keith Braithwaite.
+
+`https://github.com/sf105/tdd-as-if-you-meant-it`
 
 ## Test-Driven Development isn't complicated
 1. Add a little test
@@ -25,6 +28,7 @@ Originally by Keith Braithwaite.
 - It's intended to show how unexpected designs can emerge from 
 the process
 - It's an exercise, it's _not_ intended for everyday use
+- It's suprisingly hard to get started
 
 <img src="images/up-to-eleven.jpg" width="50%"/>
 
@@ -74,12 +78,12 @@ Existing code _that you know works_
 - Refactor as required. To create new structure that's not test code, 
   apply these steps _very strictly_.
   - _methods_:
-    - (preferred) `Extract Method` to create a new method in the test class
-    - (if necessary) Move code into an existing method
+      - (preferred) `Extract Method` to create a new method in the test class
+      - (if necessary) Move code into an existing method
   - _types_:
-    - create classes only to provide a destination for `Move Method`. 
-      Populate classes by moving definitions from tests, not the other way round.
-- The person not typing makes sure that these rules are being followed.
+      - create classes only to provide a destination for `Move Method`. 
+      - Populate classes by moving definitions from tests, not the other way round.
+- The person not typing makes sure that these rules are being followed _exactly_.
   
 ----
 
@@ -97,4 +101,8 @@ Existing code _that you know works_
 - Any lessons learned?
 
 Remember, _this is just an exercise_
+
+----
+
+There's a sample solution the `candidate-solution` branch of this repository
 
