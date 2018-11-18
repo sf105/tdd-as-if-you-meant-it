@@ -2,6 +2,7 @@ package tddasifyoumeantit;
 
 import org.junit.jupiter.api.Test;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -81,7 +82,11 @@ public class TicTacToeTests {
         }
 
         private List<Integer> xMoves() {
-            return Arrays.asList(moves1.get(0), moves1.get(2), moves1.get(4), moves1.get(6));
+            final List<Integer> result = new ArrayList<>();
+            for (int i = 0; i < moves1.size(); i+= 2) {
+                result.add(moves1.get(i));
+            }
+            return result;
         }
 
         private boolean has_a_row(List<Integer> moves) {
