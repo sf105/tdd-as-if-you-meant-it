@@ -13,7 +13,7 @@ public class TicTacToeTests {
 
     @Test public void
     singleMoveIsUnfinished() {
-        assertEquals("Unfinished", new int[]{1}.length);
+        assertEquals("Unfinished", new int[]{1}.length == 1 ? "Unfinished" : "Undefined");
     }
 
 
