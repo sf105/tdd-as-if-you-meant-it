@@ -28,10 +28,10 @@ class TicTacToeMoves {
         }
     }
 
-    private final List<Integer> moves;
+    private final List<Integer> game;
 
-    public TicTacToeMoves(Integer... moves) {
-        this.moves = asList(moves);
+    public TicTacToeMoves(Integer... game) {
+        this.game = asList(game);
     }
 
     public String score() {
@@ -45,11 +45,11 @@ class TicTacToeMoves {
     }
 
     private boolean hasTooFewMoves() {
-        return moves.size() < 5;
+        return game.size() < 5;
     }
 
     private boolean playerWins(Player player) {
-        return has_won(player.moves(moves));
+        return has_won(player.moves(game));
     }
 
     private boolean has_won(List<Integer> moves) {
