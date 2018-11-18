@@ -9,6 +9,8 @@ class TicTacToeMoves {
     private static final List<Integer> UPPER_ROW = Arrays.asList(1, 2, 3);
     private static final List<Integer> MIDDLE_ROW = Arrays.asList(4, 5, 6);
     private static final List<Integer> LOWER_ROW = Arrays.asList(7, 8, 9);
+    private static final List<Integer> LEFT_COLUMN = Arrays.asList(1, 4, 7);
+
 
     private final List<Integer> moves;
 
@@ -32,11 +34,11 @@ class TicTacToeMoves {
     }
 
     private boolean X_wins() {
-        return has_a_row(xMoves());
+        return has_won(xMoves());
     }
 
     private boolean O_wins() {
-        return has_a_row(oMoves());
+        return has_won(oMoves());
     }
 
     private List<Integer> oMoves() {
@@ -55,9 +57,10 @@ class TicTacToeMoves {
         return result;
     }
 
-    private boolean has_a_row(List<Integer> moves) {
+    private boolean has_won(List<Integer> moves) {
         return moves.containsAll(UPPER_ROW)
                 || moves.containsAll(MIDDLE_ROW)
-                || moves.containsAll(LOWER_ROW);
+                || moves.containsAll(LOWER_ROW)
+                || moves.containsAll(LEFT_COLUMN);
     }
 }
