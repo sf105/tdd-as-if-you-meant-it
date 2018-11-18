@@ -23,17 +23,14 @@ public class TicTacToeTests {
         assertEquals("Unfinished", ticTacToeScoreOf(1, 2, 3, 4));
     }
     @Test public void
-    xWinsWithTheTopRow() {
+    xWinsWithAnInitialRow() {
         assertEquals("X", ticTacToeScoreOf(1, 4, 2, 5, 3));
+        assertEquals("X", ticTacToeScoreOf(4, 1, 5, 2, 6));
+        assertEquals("X", ticTacToeScoreOf(7, 4, 8, 5, 9));
     }
     @Test public void
     oWinsWithTheTopRow() {
         assertEquals("O", ticTacToeScoreOf(7, 1, 4, 2, 5, 3));
-    }
-
-    @Test public void
-    xWinsWithTheMiddleRow() {
-        assertEquals("X", ticTacToeScoreOf(4, 1, 5, 2, 6));
     }
 
     private String ticTacToeScoreOf(int... moves) {
@@ -42,6 +39,9 @@ public class TicTacToeTests {
             return "X";
         }
         if (moves[0] == 4 && moves[2] == 5 && moves[4] == 6) {
+            return "X";
+        }
+        if (moves[0] == 7 && moves[2] == 8 && moves[4] == 9) {
             return "X";
         }
         if (moves[1] == 1 && moves[3] == 2 && moves[5] == 3) {
