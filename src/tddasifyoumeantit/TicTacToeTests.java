@@ -57,6 +57,10 @@ public class TicTacToeTests {
     }
 
     private static class Moves {
+        public static final List<Integer> UPPER_ROW = Arrays.asList(1, 2, 3);
+        public static final List<Integer> MIDDLE_ROW = Arrays.asList(4, 5, 6);
+        public static final List<Integer> LOWER_ROW = Arrays.asList(7, 8, 9);
+
         private final List<Integer> moves;
 
         private Moves(Integer... moves) {
@@ -92,9 +96,9 @@ public class TicTacToeTests {
         }
 
         private boolean has_a_row(List<Integer> moves) {
-            return moves.containsAll(Arrays.asList(1, 2, 3))
-                    || moves.containsAll(Arrays.asList(4, 5, 6))
-                    || moves.containsAll(Arrays.asList(7, 8, 9));
+            return moves.containsAll(UPPER_ROW)
+                    || moves.containsAll(MIDDLE_ROW)
+                    || moves.containsAll(LOWER_ROW);
         }
     }
 }
