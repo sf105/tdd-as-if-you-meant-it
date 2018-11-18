@@ -31,11 +31,17 @@ public class TicTacToeTests {
         assertEquals("X", ticTacToeScoreOf(new Moves(4, 1, 5, 2, 6)));
         assertEquals("X", ticTacToeScoreOf(new Moves(7, 4, 8, 5, 9)));
     }
+
     @Test public void
     oWinsWithTheTopRow() {
         assertEquals("O", ticTacToeScoreOf(new Moves(7, 1, 4, 2, 5, 3)));
         assertEquals("O", ticTacToeScoreOf(new Moves(7, 4, 1, 5, 2, 6)));
         assertEquals("O", ticTacToeScoreOf(new Moves(1, 7, 2, 8, 5, 9)));
+    }
+
+    @Test public void
+    xWinsWithALaterRow() {
+        assertEquals("X", ticTacToeScoreOf(new Moves(7, 8, 1, 4, 2, 5, 3)));
     }
 
     private String ticTacToeScoreOf(Moves moves) {
