@@ -81,7 +81,7 @@ public class TicTacToeTests {
         }
 
         private List<Integer> xMoves() {
-            return Arrays.asList(moves1.get(0), moves1.get(2), moves1.get(4));
+            return Arrays.asList(moves1.get(0), moves1.get(2), moves1.get(4), moves1.get(6));
         }
 
         private boolean has_a_row(List<Integer> moves) {
