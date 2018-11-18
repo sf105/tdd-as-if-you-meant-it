@@ -35,12 +35,12 @@ public class TicTacToeTests {
         assertEquals("O", ticTacToeScoreOf(new Moves(1, 7, 2, 8, 5, 9)));
     }
 
-    private String ticTacToeScoreOf(Moves moves1) {
-        if (moves1.hasTooFewMoves()) {  return "Unfinished"; }
-        if (is_an_X_row(moves1.getMoves())) {
+    private String ticTacToeScoreOf(Moves moves) {
+        if (moves.hasTooFewMoves()) {  return "Unfinished"; }
+        if (is_an_X_row(moves.getMoves())) {
             return "X";
         }
-        if (is_an_O_row(moves1.getMoves())){
+        if (is_an_O_row(moves.getMoves())){
             return "O";
         }
         return "Undefined";
