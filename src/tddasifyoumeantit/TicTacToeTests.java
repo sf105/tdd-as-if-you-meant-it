@@ -36,7 +36,7 @@ public class TicTacToeTests {
     }
 
     private String ticTacToeScoreOf(Moves moves1) {
-        if (moves1.getMoves().length < 5) {  return "Unfinished"; }
+        if (hasTooFewMoves(moves1)) {  return "Unfinished"; }
         if (is_an_X_row(moves1.getMoves())) {
             return "X";
         }
@@ -44,6 +44,10 @@ public class TicTacToeTests {
             return "O";
         }
         return "Undefined";
+    }
+
+    private boolean hasTooFewMoves(Moves moves1) {
+        return moves1.getMoves().length < 5;
     }
 
     private boolean is_an_O_row(int[] moves) {
