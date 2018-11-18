@@ -35,13 +35,9 @@ public class TicTacToeTests {
 
     private String ticTacToeScoreOf(int... moves) {
         if (moves.length < 5) {  return "Unfinished"; }
-        if (moves[0] == 1 && moves[2] == 2 && moves[4] == 3) {
-            return "X";
-        }
-        if (moves[0] == 4 && moves[2] == 5 && moves[4] == 6) {
-            return "X";
-        }
-        if (moves[0] == 7 && moves[2] == 8 && moves[4] == 9) {
+        if ((moves[0] == 1 && moves[2] == 2 && moves[4] == 3)
+            || (moves[0] == 4 && moves[2] == 5 && moves[4] == 6)
+            || (moves[0] == 7 && moves[2] == 8 && moves[4] == 9)) {
             return "X";
         }
         if (moves[1] == 1 && moves[3] == 2 && moves[5] == 3) {
