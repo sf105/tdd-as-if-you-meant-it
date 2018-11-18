@@ -40,16 +40,10 @@ public class TicTacToeTests {
         if (moves.is_an_X_row(this)) {
             return "X";
         }
-        if (is_an_O_row(moves.getMoves())){
+        if (moves.is_an_O_row(this)){
             return "O";
         }
         return "Undefined";
-    }
-
-    private boolean is_an_O_row(int[] moves) {
-        return (moves[1] == 1 && moves[3] == 2 && moves[5] == 3)
-            || (moves[1] == 4 && moves[3] == 5 && moves[5] == 6)
-            || (moves[1] == 7 && moves[3] == 8 && moves[5] == 9);
     }
 
     private static class Moves {
@@ -59,18 +53,20 @@ public class TicTacToeTests {
             this.moves = moves;
         }
 
-        public int[] getMoves() {
-            return moves;
-        }
-
         public boolean hasTooFewMoves() {
             return moves.length < 5;
         }
 
         private boolean is_an_X_row(TicTacToeTests ticTacToeTests) {
-            return (getMoves()[0] == 1 && getMoves()[2] == 2 && getMoves()[4] == 3)
-                || (getMoves()[0] == 4 && getMoves()[2] == 5 && getMoves()[4] == 6)
-                || (getMoves()[0] == 7 && getMoves()[2] == 8 && getMoves()[4] == 9);
+            return (moves[0] == 1 && moves[2] == 2 && moves[4] == 3)
+                || (moves[0] == 4 && moves[2] == 5 && moves[4] == 6)
+                || (moves[0] == 7 && moves[2] == 8 && moves[4] == 9);
+        }
+
+        private boolean is_an_O_row(TicTacToeTests ticTacToeTests) {
+            return (moves[1] == 1 && moves[3] == 2 && moves[5] == 3)
+                || (moves[1] == 4 && moves[3] == 5 && moves[5] == 6)
+                || (moves[1] == 7 && moves[3] == 8 && moves[5] == 9);
         }
     }
 }
