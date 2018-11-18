@@ -18,6 +18,14 @@ class TicTacToeMoves {
         Player(int offset) {
             this.offset = offset;
         }
+
+        private List<Integer> moves(List<Integer> moves) {
+            final List<Integer> result = new ArrayList<>();
+            for (int i = this.offset; i < moves.size(); i += 2) {
+                result.add(moves.get(i));
+            }
+            return result;
+        }
     }
     public static final Player O_PLAYER = Player.O;
     public static final Player X_PLAYER = Player.X;
@@ -44,15 +52,7 @@ class TicTacToeMoves {
     }
 
     private boolean playerWins(Player player) {
-        return has_won(playerMoves(player.offset));
-    }
-
-    private List<Integer> playerMoves(int playerOffset) {
-        final List<Integer> result = new ArrayList<>();
-        for (int i = playerOffset; i < moves.size(); i += 2) {
-            result.add(moves.get(i));
-        }
-        return result;
+        return has_won(player.moves(moves));
     }
 
     private boolean has_won(List<Integer> moves) {
