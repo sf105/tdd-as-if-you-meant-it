@@ -59,7 +59,7 @@ public class TicTacToeTests {
         }
 
         public boolean hasTooFewMoves() {
-            return moves.length < 5;
+            return moves1.size() < 5;
         }
 
         private boolean is_an_X_row() {
