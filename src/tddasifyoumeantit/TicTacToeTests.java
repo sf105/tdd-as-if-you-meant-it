@@ -22,7 +22,7 @@ public class TicTacToeTests {
     }
 
     private String ticTacToeScoreOf(int... moves) {
-        return moves.length == 2 ? "Unfinished" : "Undefined";
+        return moves.length <= 2 ? "Unfinished" : "Undefined";
     }
 
 }
