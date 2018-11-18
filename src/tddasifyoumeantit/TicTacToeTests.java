@@ -37,8 +37,9 @@ public class TicTacToeTests {
     }
 
     @Test public void
-    xWinsWithALaterRow() {
+    winningWithALaterRow() {
         assertEquals("X", new TicTacToeMoves(7, 8, 1, 4, 2, 5, 3).score());
+        assertEquals("O", new TicTacToeMoves(9, 7, 8, 1, 4, 2, 5, 3).score());
     }
 
     @Test public void

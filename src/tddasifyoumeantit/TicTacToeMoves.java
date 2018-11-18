@@ -13,10 +13,9 @@ class TicTacToeMoves {
     private static final int O_OFFSET = 1;
     private static final int X_OFFSET = 0;
 
-
     private final List<Integer> moves;
 
-    TicTacToeMoves(Integer... moves) {
+    public TicTacToeMoves(Integer... moves) {
         this.moves = asList(moves);
     }
 
