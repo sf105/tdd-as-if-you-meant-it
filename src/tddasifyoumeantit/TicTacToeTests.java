@@ -27,6 +27,10 @@ public class TicTacToeTests {
     xWinsWithTheTopRow() {
         assertEquals("X", ticTacToeScoreOf(1, 4, 2, 5, 3));
     }
+    @Test public void
+    oWinsWithTheTopRow() {
+        assertEquals("O", ticTacToeScoreOf(7, 1, 4, 2, 5, 3));
+    }
 
     private String ticTacToeScoreOf(int... moves) {
         if (moves.length < 5) {  return "Unfinished"; }
