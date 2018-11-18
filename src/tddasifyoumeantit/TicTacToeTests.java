@@ -41,6 +41,9 @@ public class TicTacToeTests {
         if (moves[0] == 1 && moves[2] == 2 && moves[4] == 3) {
             return "X";
         }
+        if (moves[0] == 4 && moves[2] == 5 && moves[4] == 6) {
+            return "X";
+        }
         if (moves[1] == 1 && moves[3] == 2 && moves[5] == 3) {
             return "O";
         }
