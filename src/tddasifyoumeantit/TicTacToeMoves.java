@@ -10,6 +10,8 @@ class TicTacToeMoves {
     private static final List<Integer> MIDDLE_ROW = Arrays.asList(4, 5, 6);
     private static final List<Integer> LOWER_ROW = Arrays.asList(7, 8, 9);
     private static final List<Integer> LEFT_COLUMN = Arrays.asList(1, 4, 7);
+    private static final int O_OFFSET = 1;
+    private static final int X_OFFSET = 0;
 
 
     private final List<Integer> moves;
@@ -42,11 +44,11 @@ class TicTacToeMoves {
     }
 
     private List<Integer> oMoves() {
-        return playerMoves(1);
+        return playerMoves(O_OFFSET);
     }
 
     private List<Integer> xMoves() {
-        return playerMoves(0);
+        return playerMoves(X_OFFSET);
     }
 
     private List<Integer> playerMoves(int playerOffset) {
