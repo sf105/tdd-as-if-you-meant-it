@@ -26,7 +26,7 @@ class TicTacToeMoves {
         if (O_wins()){
             return "O";
         }
-        return "Undefined";
+        return "Draw";
     }
 
     private boolean hasTooFewMoves() {
