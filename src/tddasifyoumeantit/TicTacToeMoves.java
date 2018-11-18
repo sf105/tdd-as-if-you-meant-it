@@ -36,19 +36,11 @@ class TicTacToeMoves {
     }
 
     private boolean X_wins() {
-        return has_won(xMoves());
+        return has_won(playerMoves(X_OFFSET));
     }
 
     private boolean O_wins() {
-        return has_won(oMoves());
-    }
-
-    private List<Integer> oMoves() {
-        return playerMoves(O_OFFSET);
-    }
-
-    private List<Integer> xMoves() {
-        return playerMoves(X_OFFSET);
+        return has_won(playerMoves(O_OFFSET));
     }
 
     private List<Integer> playerMoves(int playerOffset) {
