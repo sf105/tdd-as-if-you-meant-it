@@ -7,6 +7,8 @@ import static java.util.Arrays.asList;
 
 @SuppressWarnings("WeakerAccess")
 class TicTacToeMoves {
+    public static final String RESULT_DRAW = "Draw";
+    public static final String RESULT_UNFINISHED = "Unfinished";
     private static final List<List<Integer>> WINNING_PLAYS = asList(
             asList(1, 2, 3), asList(4, 5, 6), asList(7, 8, 9),
             asList(1, 4, 7), asList(2, 5, 8), asList(3, 6, 9),
@@ -37,13 +39,13 @@ class TicTacToeMoves {
     }
 
     public String score() {
-        if (hasTooFewMoves()) {  return "Unfinished"; }
+        if (hasTooFewMoves()) {  return RESULT_UNFINISHED; }
         for (Player player : Player.values()) {
             if (playerWins(player)) {
                 return player.name();
             }
         }
-        return "Draw";
+        return RESULT_DRAW;
     }
 
     private boolean hasTooFewMoves() {

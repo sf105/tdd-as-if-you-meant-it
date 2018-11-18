@@ -3,6 +3,8 @@ package tddasifyoumeantit;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static tddasifyoumeantit.TicTacToeMoves.RESULT_DRAW;
+import static tddasifyoumeantit.TicTacToeMoves.RESULT_UNFINISHED;
 
 /*
    This represents the positions in a game.
@@ -16,11 +18,11 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class TicTacToeTests {
     @Test public void
     aGameWithFewerThan5MovesCannotBeFinished() {
-        assertEquals("Unfinished", new TicTacToeMoves().score());
-        assertEquals("Unfinished", new TicTacToeMoves(1).score());
-        assertEquals("Unfinished", new TicTacToeMoves(1, 2).score());
-        assertEquals("Unfinished", new TicTacToeMoves(1, 2, 3).score());
-        assertEquals("Unfinished", new TicTacToeMoves(1, 2, 3, 4).score());
+        assertEquals(RESULT_UNFINISHED, new TicTacToeMoves().score());
+        assertEquals(RESULT_UNFINISHED, new TicTacToeMoves(1).score());
+        assertEquals(RESULT_UNFINISHED, new TicTacToeMoves(1, 2).score());
+        assertEquals(RESULT_UNFINISHED, new TicTacToeMoves(1, 2, 3).score());
+        assertEquals(RESULT_UNFINISHED, new TicTacToeMoves(1, 2, 3, 4).score());
     }
     @Test public void
     xWinsWithAnInitialRow() {
@@ -62,7 +64,7 @@ public class TicTacToeTests {
 
     @Test public void
     noWinsIsADraw() {
-        assertEquals("Draw", new TicTacToeMoves(
+        assertEquals(RESULT_DRAW, new TicTacToeMoves(
                 1, 5,
                 2, 3,
                 6, 4,
