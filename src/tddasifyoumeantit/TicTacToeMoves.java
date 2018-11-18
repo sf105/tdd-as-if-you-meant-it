@@ -22,10 +22,10 @@ class TicTacToeMoves {
 
     public String score() {
         if (hasTooFewMoves()) {  return "Unfinished"; }
-        if (X_wins(X_OFFSET)) {
+        if (playerWins(X_OFFSET)) {
             return "X";
         }
-        if (O_wins(O_OFFSET)){
+        if (playerWins(O_OFFSET)){
             return "O";
         }
         return "Draw";
@@ -35,11 +35,7 @@ class TicTacToeMoves {
         return moves.size() < 5;
     }
 
-    private boolean X_wins(int playerOffset) {
-        return has_won(playerMoves(playerOffset));
-    }
-
-    private boolean O_wins(int playerOffset) {
+    private boolean playerWins(int playerOffset) {
         return has_won(playerMoves(playerOffset));
     }
 
