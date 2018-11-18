@@ -8,7 +8,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class TicTacToeTests {
     @Test public void
     emptyGameIsUnfinished() {
-        assertEquals("Unfinished", []);
+        assertEquals("Unfinished", new int[0]);
     }
 
 }
