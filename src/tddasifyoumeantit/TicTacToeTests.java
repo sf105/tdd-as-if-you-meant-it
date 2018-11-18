@@ -7,18 +7,12 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 @SuppressWarnings("WeakerAccess")
 public class TicTacToeTests {
     @Test public void
-    emptyGameIsUnfinished() {
+    aGameWithFewerThan5MovesCannotBeFinished() {
         assertEquals("Unfinished", ticTacToeScoreOf());
-    }
-
-    @Test public void
-    singleMoveIsUnfinished() {
         assertEquals("Unfinished", ticTacToeScoreOf(1));
-    }
-
-    @Test public void
-    twoMovesIsUnfinished() {
         assertEquals("Unfinished", ticTacToeScoreOf(1, 2));
+        assertEquals("Unfinished", ticTacToeScoreOf(1, 2, 3));
+        assertEquals("Unfinished", ticTacToeScoreOf(1, 2, 3, 4));
     }
 
     private String ticTacToeScoreOf(int... moves) {
