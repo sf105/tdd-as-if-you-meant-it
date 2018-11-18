@@ -2,6 +2,9 @@ package tddasifyoumeantit;
 
 import org.junit.jupiter.api.Test;
 
+import java.util.Arrays;
+import java.util.List;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /*
@@ -47,10 +50,12 @@ public class TicTacToeTests {
     }
 
     private static class Moves {
-        private final int[] moves;
+        private final Integer[] moves;
+        private final List<Integer> moves1;
 
-        private Moves(int... moves) {
+        private Moves(Integer... moves) {
             this.moves = moves;
+            this.moves1 = Arrays.asList(moves);
         }
 
         public boolean hasTooFewMoves() {
