@@ -37,10 +37,10 @@ class TicTacToeMoves {
     public String score() {
         if (hasTooFewMoves()) {  return "Unfinished"; }
         if (playerWins(Player.X)) {
-            return "X";
+            return Player.X.name();
         }
         if (playerWins(Player.O)){
-            return "O";
+            return Player.O.name();
         }
         return "Draw";
     }
