@@ -44,6 +44,7 @@ public class TicTacToeTests {
     @Test public void
     winningWithAColumn() {
         assertEquals("X", new TicTacToeMoves(3, 4, 1, 2, 4, 6, 7).score());
+        assertEquals("O", new TicTacToeMoves(8, 3, 4, 1, 2, 4, 6, 7).score());
     }
 
 }
