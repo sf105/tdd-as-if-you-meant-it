@@ -2,14 +2,13 @@ package tddasifyoumeantit;
 
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.fail;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @SuppressWarnings("WeakerAccess")
 public class TicTacToeTests {
-    @Test
-    public void
-    beginHere() {
-        fail("type something");
+    @Test public void
+    emptyGameIsUnfinished() {
+        assertEquals("Unfinished", []);
     }
 
 }
