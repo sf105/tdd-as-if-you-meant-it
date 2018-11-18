@@ -52,12 +52,6 @@ public class TicTacToeTests {
             || (moves[1] == 7 && moves[3] == 8 && moves[5] == 9);
     }
 
-    private boolean is_an_X_row(int[] moves) {
-        return (moves[0] == 1 && moves[2] == 2 && moves[4] == 3)
-            || (moves[0] == 4 && moves[2] == 5 && moves[4] == 6)
-            || (moves[0] == 7 && moves[2] == 8 && moves[4] == 9);
-    }
-
     private static class Moves {
         private final int[] moves;
 
@@ -74,7 +68,9 @@ public class TicTacToeTests {
         }
 
         private boolean is_an_X_row(TicTacToeTests ticTacToeTests) {
-            return ticTacToeTests.is_an_X_row(getMoves());
+            return (getMoves()[0] == 1 && getMoves()[2] == 2 && getMoves()[4] == 3)
+                || (getMoves()[0] == 4 && getMoves()[2] == 5 && getMoves()[4] == 6)
+                || (getMoves()[0] == 7 && getMoves()[2] == 8 && getMoves()[4] == 9);
         }
     }
 }
