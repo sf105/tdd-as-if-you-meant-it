@@ -78,7 +78,11 @@ public class TicTacToeTests {
         }
 
         private List<Integer> oMoves() {
-            return Arrays.asList(moves1.get(1), moves1.get(3), moves1.get(5));
+            final List<Integer> result = new ArrayList<>();
+            for (int i = 1; i < moves1.size(); i+= 2) {
+                result.add(moves1.get(i));
+            }
+            return result;
         }
 
         private List<Integer> xMoves() {
