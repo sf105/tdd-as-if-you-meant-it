@@ -40,12 +40,16 @@ public class TicTacToeTests {
         if (is_an_X_row(moves)) {
             return "X";
         }
-        if ((moves[1] == 1 && moves[3] == 2 && moves[5] == 3)
-            || (moves[1] == 4 && moves[3] == 5 && moves[5] == 6)
-            || (moves[1] == 7 && moves[3] == 8 && moves[5] == 9)){
+        if (is_an_O_row(moves)){
             return "O";
         }
         return "Undefined";
+    }
+
+    private boolean is_an_O_row(int[] moves) {
+        return (moves[1] == 1 && moves[3] == 2 && moves[5] == 3)
+            || (moves[1] == 4 && moves[3] == 5 && moves[5] == 6)
+            || (moves[1] == 7 && moves[3] == 8 && moves[5] == 9);
     }
 
     private boolean is_an_X_row(int[] moves) {
