@@ -63,13 +63,19 @@ public class TicTacToeTests {
         }
 
         private boolean is_an_X_row() {
-            List<Integer> xMoves = Arrays.asList(moves1.get(0), moves1.get(2), moves1.get(4));
-            return has_a_row(xMoves);
+            return has_a_row(xMoves());
         }
 
         private boolean is_an_O_row() {
-            List<Integer> yMoves = Arrays.asList(moves1.get(1), moves1.get(3), moves1.get(5));
-            return has_a_row(yMoves);
+            return has_a_row(oMoves());
+        }
+
+        private List<Integer> oMoves() {
+            return Arrays.asList(moves1.get(1), moves1.get(3), moves1.get(5));
+        }
+
+        private List<Integer> xMoves() {
+            return Arrays.asList(moves1.get(0), moves1.get(2), moves1.get(4));
         }
 
         private boolean has_a_row(List<Integer> moves) {
