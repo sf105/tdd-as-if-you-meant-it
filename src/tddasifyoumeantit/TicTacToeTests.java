@@ -57,16 +57,14 @@ public class TicTacToeTests {
     }
 
     private static class Moves {
-        private final Integer[] moves;
-        private final List<Integer> moves1;
+        private final List<Integer> moves;
 
         private Moves(Integer... moves) {
-            this.moves = moves;
-            this.moves1 = Arrays.asList(moves);
+            this.moves = Arrays.asList(moves);
         }
 
         public boolean hasTooFewMoves() {
-            return moves1.size() < 5;
+            return moves.size() < 5;
         }
 
         private boolean is_an_X_row() {
@@ -79,16 +77,16 @@ public class TicTacToeTests {
 
         private List<Integer> oMoves() {
             final List<Integer> result = new ArrayList<>();
-            for (int i = 1; i < moves1.size(); i+= 2) {
-                result.add(moves1.get(i));
+            for (int i = 1; i < moves.size(); i+= 2) {
+                result.add(moves.get(i));
             }
             return result;
         }
 
         private List<Integer> xMoves() {
             final List<Integer> result = new ArrayList<>();
-            for (int i = 0; i < moves1.size(); i+= 2) {
-                result.add(moves1.get(i));
+            for (int i = 0; i < moves.size(); i+= 2) {
+                result.add(moves.get(i));
             }
             return result;
         }
