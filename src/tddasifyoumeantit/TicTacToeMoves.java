@@ -10,8 +10,17 @@ class TicTacToeMoves {
     private static final List<List<Integer>> WINNING_PLAYS = asList(
             asList(1, 2, 3), asList(4, 5, 6), asList(7, 8, 9), asList(1, 4, 7));
 
-    public static final Player O_PLAYER = new Player(1);
-    public static final Player X_PLAYER = new Player(0);
+    public enum Player {
+        X(0),
+        O(1);
+
+        private final int offset;
+        Player(int offset) {
+            this.offset = offset;
+        }
+    }
+    public static final Player O_PLAYER = Player.O;
+    public static final Player X_PLAYER = Player.X;
 
     private final List<Integer> moves;
 
@@ -35,7 +44,7 @@ class TicTacToeMoves {
     }
 
     private boolean playerWins(Player player) {
-        return has_won(playerMoves(player.getPlayerOffset()));
+        return has_won(playerMoves(player.offset));
     }
 
     private List<Integer> playerMoves(int playerOffset) {
@@ -48,17 +57,5 @@ class TicTacToeMoves {
 
     private boolean has_won(List<Integer> moves) {
         return WINNING_PLAYS.stream().anyMatch(moves::containsAll);
-    }
-
-    private static class Player {
-        private final int playerOffset;
-
-        private Player(int playerOffset) {
-            this.playerOffset = playerOffset;
-        }
-
-        public int getPlayerOffset() {
-            return playerOffset;
-        }
     }
 }
