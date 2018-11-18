@@ -46,11 +46,28 @@ public class TicTacToeTests {
     winningWithAColumn() {
         assertEquals("X", new TicTacToeMoves(3, 4, 1, 2, 4, 6, 7).score());
         assertEquals("O", new TicTacToeMoves(8, 3, 4, 1, 2, 4, 6, 7).score());
+
+        assertEquals("X", new TicTacToeMoves(1, 2, 4, 5, 7).score());
+        assertEquals("X", new TicTacToeMoves(2, 4, 5, 7, 8).score());
+        assertEquals("X", new TicTacToeMoves(3, 4, 6, 7, 9).score());
+    }
+
+    @Test public void
+    winningWith_a_diagonal() {
+        assertEquals("X", new TicTacToeMoves(1, 2, 5, 4, 9).score());
+        assertEquals("X", new TicTacToeMoves(7, 2, 5, 4, 3).score());
+        assertEquals("O", new TicTacToeMoves(7, 1, 2, 5, 4, 9).score());
+        assertEquals("O", new TicTacToeMoves(9, 7, 2, 5, 4, 3).score());
     }
 
     @Test public void
     noWinsIsADraw() {
-        assertEquals("Draw", new TicTacToeMoves(1, 2, 3, 4, 5, 6, 7, 8, 9).score());
+        assertEquals("Draw", new TicTacToeMoves(
+                1, 5,
+                2, 3,
+                6, 4,
+                8, 9,
+                7).score());
     }
 
 }

@@ -8,7 +8,9 @@ import static java.util.Arrays.asList;
 @SuppressWarnings("WeakerAccess")
 class TicTacToeMoves {
     private static final List<List<Integer>> WINNING_PLAYS = asList(
-            asList(1, 2, 3), asList(4, 5, 6), asList(7, 8, 9), asList(1, 4, 7));
+            asList(1, 2, 3), asList(4, 5, 6), asList(7, 8, 9),
+            asList(1, 4, 7), asList(2, 5, 8), asList(3, 6, 9),
+            asList(1, 5, 9), asList(3, 5, 7));
 
     public enum Player {
         X(0),
